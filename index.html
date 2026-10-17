@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKASHA | Agence de Communication Créative & Digitale</title>
+  <meta name="description"
+    content="Akasha est l'agence de communication créative et digitale qui donne forme à vos idées et de l'écho à votre marque. Création de contenus, réseaux sociaux, voix off et formations.">
+  <meta name="keywords"
+    content="Akasha, agence de communication, création de contenus, community manager, montage vidéo, réels, affiches, voix off, Meta Buying, formation IA, Cotonou, Bénin, Afrique">
+  <meta property="og:title" content="AKASHA | Le cinquième élément de votre communication">
+  <meta property="og:description"
+    content="L'invisible devient votre force. Création de contenus, stratégie de médias sociaux, voix off et formations digitales.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicons – tête emblème Akasha -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="48x48"   href="assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16"   href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon"      sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Google Fonts: Space Grotesk, Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+
+  <!-- Ambient Ether Background Canvas -->
+  <canvas id="ether-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Light Orbs -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Retour à l'accueil Akasha">
+        <!-- Logo for Dark Mode -->
+        <img src="assets/logo_white_transparent.png" alt="Akasha Communication Logo"
+          class="header-logo-img logo-dark-mode">
+        <!-- Logo for Light Mode -->
+        <img src="assets/akasha_logo_light_theme.png?v=2" alt="Akasha Communication Logo"
+          class="header-logo-img logo-light-mode">
+      </a>
+
+      <nav class="nav-menu" id="nav-menu" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="#agence" class="nav-link">L'agence</a></li>
+          <li><a href="#expertises" class="nav-link">Expertises</a></li>
+          <li><a href="#tarifs" class="nav-link">Offres & tarifs</a></li>
+          <li><a href="#formations" class="nav-link">Formations</a></li>
+          <li><a href="#simulateur" class="nav-link nav-highlight">Simulateur</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Light / Dark Mode Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Changer le thème (clair / sombre)"
+          title="Basculer le mode clair / sombre">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="theme-icon sun-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="theme-icon moon-icon" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <a href="#contact" class="btn-primary-pill" id="header-cta-btn">
+          <span>Parlons de votre projet</span>
+          <svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="badge-tag">
+            <span class="badge-square"></span>
+            <span>AKASHA COMMUNICATION · AGENCE CRÉATIVE & DIGITALE</span>
+          </div>
+
+          <h1 class="hero-title">
+            L’invisible devient <br>
+            <span class="text-fuchsia glitch-text">votre force.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Nous donnons forme à vos idées et de l’écho à votre marque. Stratégie, contenus et présence digitale : une
+            même énergie, la vôtre.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-primary-pill hero-btn-main">
+              <span>Donnons vie à votre projet</span>
+              <svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#expertises" class="btn-secondary-pill">
+              <span>Explorer nos expertises</span>
+              <svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Seamlessly integrated 3D creative workspace -->
+        <div class="hero-visual">
+          <div class="agency-hero-wrapper hero-scene-integrated">
+            <!-- Ambient back-glow behind the 3D scene -->
+            <div class="hero-scene-backglow" aria-hidden="true"></div>
+
+            <div class="hero-scene-artwork">
+              <img src="assets/hero_creative_workspace.png"
+                alt="Univers créatif Akasha Communication - Stratégie, réseaux sociaux & création"
+                class="agency-hero-photo scene-image"
+                fetchpriority="high"
+                decoding="async">
+            </div>
+
+            <!-- Floating micro-badge seamlessly integrated -->
+            <div class="scene-badge scene-badge-top glass-panel">
+              <span class="scene-badge-pulse"></span>
+              <span>Studio Créatif · Stratégie & Réseaux</span>
+            </div>
+
+            <div class="ether-statement-card glass-panel">
+              <span class="element-tag">Le cinquième élément.</span>
+              <p>L’espace où les idées circulent, les marques résonnent, les liens se créent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Bottom Bar -->
+      <div class="hero-bottom-bar">
+        <div class="bottom-bar-left">
+          <span>STRATÉGIE</span>
+          <span class="bar-separator">/</span>
+          <span>CRÉATION</span>
+          <span class="bar-separator">/</span>
+          <span>CONNEXION</span>
+        </div>
+        <a href="#clients" class="bottom-bar-right scroll-trigger">
+          <span>Entrez dans l'univers AKASHA</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 02: CLIENTS & PARTENAIRES ("DES RENCONTRES, DES CONNEXIONS") -->
+    <section class="section-clients" id="clients">
+      <div class="container">
+        <div class="section-header-row">
+          <div class="badge-tag">
+            <span class="badge-square"></span>
+            <span>DES RENCONTRES, DES CONNEXIONS</span>
+          </div>
+          <h2 class="section-title">Ils ont travaillé avec AKASHA.</h2>
+        </div>
+
+        <div class="clients-grid">
+          <!-- Client 1 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_complexe_elite.png" alt="Complexe Élite" loading="lazy">
+            </div>
+            <span class="client-name">Complexe Élite</span>
+          </div>
+
+          <!-- Client 2 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_elite_librairie.png" alt="Élite librairie Café" loading="lazy">
+            </div>
+            <span class="client-name">Élite librairie Café</span>
+          </div>
+
+          <!-- Client 3 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_game_conscience.png" alt="Game Conscience Week 2026" loading="lazy">
+            </div>
+            <span class="client-name">Game Conscience Week 2026</span>
+          </div>
+
+          <!-- Client 4 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_cortex.png" alt="CORTEX" loading="lazy">
+            </div>
+            <span class="client-name">CORTEX</span>
+          </div>
+
+          <!-- Client 5 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_professeur_forex.png" alt="Professeur Forex" loading="lazy">
+            </div>
+            <span class="client-name">Professeur Forex</span>
+          </div>
+
+          <!-- Client 6 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_crec.png" alt="CREC" loading="lazy">
+            </div>
+            <span class="client-name">CREC</span>
+          </div>
+
+          <!-- Client 7 -->
+          <div class="client-card">
+            <div class="client-img-wrap">
+              <img src="assets/clients/client_istmr.png" alt="ISTMR · Matteo Ricci" loading="lazy">
+            </div>
+            <span class="client-name">ISTMR · Matteo Ricci</span>
+          </div>
+
+          <!-- Client 8: Call to Action Card -->
+          <a href="#contact" class="client-card client-cta-card">
+            <div class="cta-card-content">
+              <h3>Et si la prochaine connexion, c’était vous ?</h3>
+              <div class="card-link-action">
+                <span>Parlons ensemble</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: 01 / L'AGENCE (AVEC LOGO OFFICIEL AKASHA) -->
+    <section class="section-agency" id="agence">
+      <div class="container">
+        <div class="agency-grid">
+
+          <!-- Visual Column: Akasha Official Logo Showcase -->
+          <div class="agency-visual-col">
+            <div class="agency-logo-showcase glass-panel">
+              <div class="showcase-glow" aria-hidden="true"></div>
+              <div class="showcase-dragon-wrap">
+                <!-- Dragon emblem -->
+                <img src="assets/akasha_dragon_gradient.png" alt="Emblème Dragon Akasha" class="agency-dragon-symbol">
+              </div>
+              <div class="showcase-brand-details">
+                <span class="showcase-tag">IDENTITÉ OFFICIELLE</span>
+                <h3 class="showcase-title">AKASHA COMMUNICATION</h3>
+                <p class="showcase-meaning">Le 5ème Élément · L'Éther universel de connexion</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="agency-text-col">
+            <div class="badge-tag">
+              <span class="badge-square"></span>
+              <span>01 / L'AGENCE</span>
+            </div>
+            <h2 class="section-heading-large">
+              Entre votre marque et le monde, il y a <span class="gradient-text">AKASHA.</span>
+            </h2>
+            <div class="agency-paragraphs">
+              <p>
+                En sanskrit, <strong>Akasha</strong> désigne le cinquième élément : l’éther. Au-delà de la terre, de
+                l’eau, du feu et de l’air, c’est l’espace infini, le médium invisible à travers lequel tout circule :
+                sons, ondes, énergie, information.
+              </p>
+              <p>
+                Pour une entreprise de communication, c’est une évidence : la communication est précisément ce qui
+                circule dans cet espace invisible entre les marques et leurs publics. <strong>Akasha, c’est ce canal
+                  universel.</strong>
+              </p>
+            </div>
+
+            <!-- Agency Pillars -->
+            <div class="agency-pillars" id="expertises">
+              <div class="pillar-item">
+                <span class="pillar-num">01</span>
+                <div class="pillar-body">
+                  <h4>Donner forme.</h4>
+                  <span class="pillar-tag">CRÉATION DE CONTENUS</span>
+                  <p>Affiches, logos, prise de vues et montage vidéo. Une expression visuelle qui porte votre
+                    singularité.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <span class="pillar-num">02</span>
+                <div class="pillar-body">
+                  <h4>Faire circuler.</h4>
+                  <span class="pillar-tag">SOCIAL MEDIA & STRATÉGIE</span>
+                  <p>Gestion de vos médias sociaux, traffic management et conseil en marketing digital. Le bon message,
+                    au bon endroit.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <span class="pillar-num">03</span>
+                <div class="pillar-body">
+                  <h4>Transmettre.</h4>
+                  <span class="pillar-tag">VOIX OFF & FORMATIONS</span>
+                  <p>Une voix pour vos vidéos. Des formations concrètes pour gagner en autonomie avec l'IA, CapCut et
+                    Meta Buying.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: OFFRES & TARIFS · CRÉATION DE CONTENUS -->
+    <section class="section-tarifs-creation" id="tarifs">
+      <div class="container">
+        <div class="section-header-complex">
+          <div class="badge-tag">
+            <span class="badge-square"></span>
+            <span>03 / OFFRES & TARIFS · CRÉATION</span>
+          </div>
+          <div class="header-split">
+            <h2 class="section-heading-medium">Des contenus qui prennent leur place.</h2>
+            <p class="section-lead">À l'unité pour un besoin précis. En pack pour installer votre présence dans la
+              durée. Tous les tarifs sont en F CFA.</p>
+          </div>
+        </div>
+
+        <!-- Cards Grid for Creation -->
+        <div class="offers-grid">
+
+          <!-- Offer 1: Conception d'affiches -->
+          <div class="offer-card glass-card">
+            <div class="offer-card-top">
+              <span class="offer-category">VISUELS & BRANDING</span>
+              <h3 class="offer-title">Conception d'affiches</h3>
+              <p class="offer-intro">Visuels professionnels haute définition adaptés à tous vos supports et réseaux.</p>
+            </div>
+
+            <div class="pricing-plans-list">
+              <div class="price-item highlight-item">
+                <div class="price-item-info">
+                  <span class="item-name">Tarif Unitaire</span>
+                  <span class="item-meta">1 affiche sur mesure</span>
+                </div>
+                <div class="price-value">7 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Pack 10 affiches</span>
+                  <span class="item-meta">Prestation mensuelle</span>
+                </div>
+                <div class="price-value">60 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item featured-plan">
+                <span class="plan-badge">Populaire</span>
+                <div class="price-item-info">
+                  <span class="item-name">Pack 15 affiches</span>
+                  <span class="item-meta">Prestation mensuelle (1 visu / 2 jours)</span>
+                </div>
+                <div class="price-value">80 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Pack Extra 30 affiches</span>
+                  <span class="item-meta">Prestation mensuelle (1 visu / jour)</span>
+                </div>
+                <div class="price-value">150 000 <span class="currency">F CFA</span></div>
+              </div>
+            </div>
+
+            <div class="offer-card-bottom">
+              <button class="btn-select-plan add-to-calc-btn" data-category="Affiches" data-plan="Pack 15 Affiches"
+                data-price="80000">
+                Ajouter au simulateur +
+              </button>
+            </div>
+          </div>
+
+          <!-- Offer 2: Tournage et montage de réels (sans ampoule) -->
+          <div class="offer-card glass-card featured-service-card">
+            <div class="featured-service-glow" aria-hidden="true"></div>
+            <div class="offer-card-top">
+              <span class="offer-category text-fuchsia">VIDÉO VIRALE</span>
+              <h3 class="offer-title">Tournage & Montage Réels</h3>
+              <p class="offer-intro">Formats courts verticaux pour Instagram, TikTok, Facebook & YouTube Shorts.</p>
+            </div>
+
+            <div class="pricing-plans-list">
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Tarif Unitaire</span>
+                  <span class="item-meta">1 réel capté et monté</span>
+                </div>
+                <div class="price-value">15 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Pack 10 vidéos</span>
+                  <span class="item-meta">Prestation mensuelle</span>
+                </div>
+                <div class="price-value">135 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item featured-plan">
+                <span class="plan-badge">Idéal Croissance</span>
+                <div class="price-item-info">
+                  <span class="item-name">Pack 15 vidéos</span>
+                  <span class="item-meta">Prestation mensuelle</span>
+                </div>
+                <div class="price-value">175 000 <span class="currency">F CFA</span></div>
+              </div>
+            </div>
+
+            <!-- Note Scripts sans icone ampoule -->
+            <div class="offer-note-box clean-note">
+              <p><strong>Option Scripts Akasha :</strong> Si les scripts sont rédigés par AKASHA pour les packs de 10 et
+                15 vidéos, <strong>+25 000 F CFA</strong> s'ajoutent aux tarifs respectifs.</p>
+            </div>
+
+            <div class="offer-card-bottom">
+              <button class="btn-select-plan add-to-calc-btn" data-category="Réels" data-plan="Pack 10 Réels"
+                data-price="135000">
+                Ajouter au simulateur +
+              </button>
+            </div>
+          </div>
+
+          <!-- Offer 3: Montage de vidéos -->
+          <div class="offer-card glass-card">
+            <div class="offer-card-top">
+              <span class="offer-category">POST-PRODUCTION</span>
+              <h3 class="offer-title">Montage de vidéos</h3>
+              <p class="offer-intro">Montage dynamique avec sous-titres animés, transitions percutantes et sound design.
+              </p>
+            </div>
+
+            <div class="pricing-plans-list">
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Tarif Unitaire</span>
+                  <span class="item-meta">Vidéo jusqu'à 50 secondes</span>
+                </div>
+                <div class="price-value">10 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Pack 10 vidéos</span>
+                  <span class="item-meta">Prestation mensuelle (max 50s/vidéo)</span>
+                </div>
+                <div class="price-value">90 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Pack 15 vidéos</span>
+                  <span class="item-meta">Prestation mensuelle (max 50s/vidéo)</span>
+                </div>
+                <div class="price-value">150 000 <span class="currency">F CFA</span></div>
+              </div>
+            </div>
+
+            <div class="offer-note-box plain-note">
+              <p><strong>Note :</strong> La durée maximale des vidéos pour cette offre est de 50 secondes.</p>
+            </div>
+
+            <div class="offer-card-bottom">
+              <button class="btn-select-plan add-to-calc-btn" data-category="Montage" data-plan="Pack 10 Montages"
+                data-price="90000">
+                Ajouter au simulateur +
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Banner Logo Creation -->
+        <div class="logo-expertise-banner glass-panel">
+          <div class="banner-text">
+            <span class="banner-sparkle">✦</span>
+            <h4>Vous avez aussi besoin d'un logo ?</h4>
+            <p>La création de logos et d'identités visuelles complètes fait partie du cœur de notre expertise.</p>
+          </div>
+          <a href="#contact" class="btn-banner-action">
+            <span>Parlons de votre identité</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: OFFRES & TARIFS · SOCIAL MEDIA -->
+    <section class="section-social-media" id="social-media">
+      <div class="container">
+        <div class="section-header-complex">
+          <div class="badge-tag">
+            <span class="badge-square"></span>
+            <span>04 / OFFRES & TARIFS · SOCIAL MEDIA</span>
+          </div>
+          <div class="header-split">
+            <h2 class="section-heading-medium">Votre présence mérite une direction.</h2>
+            <div class="social-header-right">
+              <p class="section-lead">Du diagnostic à l’animation de vos communautés, reliez votre marque à ses publics.
+              </p>
+              <div class="social-pills-list">
+                <span class="social-pill">Facebook</span>
+                <span class="social-pill">Instagram</span>
+                <span class="social-pill">TikTok</span>
+                <span class="social-pill">LinkedIn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-cards-grid">
+
+          <!-- Card 1: Diagnostic / Audit -->
+          <div class="social-card glass-card">
+            <div class="social-card-badge">Étape 01</div>
+            <h3>Analyse de présence digitale</h3>
+            <p class="social-card-desc">
+              Audit 360° de votre marque : analyse de vos profils, taux d'engagement, concurrence, points de friction et
+              plan d'action stratégique.
+            </p>
+            <div class="social-duration">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>1 à 2 semaines d'analyse approfondie</span>
+            </div>
+            <div class="social-price-range">
+              <div class="price-value">50 000 à 100 000 <span class="currency">F CFA</span></div>
+              <span class="price-meta">En fonction de la taille de votre entreprise</span>
+            </div>
+            <button class="btn-select-plan add-to-calc-btn" data-category="Social Media" data-plan="Audit Digital"
+              data-price="75000">
+              Choisir un audit +
+            </button>
+          </div>
+
+          <!-- Card 2: CM + SMM (Prestation Clé en Main) -->
+          <div class="social-card glass-card featured-social">
+            <div class="social-card-badge text-fuchsia">Formule Complète</div>
+            <h3>Community & Social Media Manager</h3>
+            <p class="social-card-desc">
+              La gestion globale et stratégique de vos comptes. Stratégie de publication, calendrier éditorial,
+              modération active, engagement communauté et reporting mensuel.
+            </p>
+            <div class="social-features-list">
+              <div class="s-feat">✓ Stratégie de contenu & calendrier</div>
+              <div class="s-feat">✓ Modération et réponses aux messages/commentaires</div>
+              <div class="s-feat">✓ Programmation et publication régulière</div>
+              <div class="s-feat">✓ Rapport d'analyse et métriques d'impact</div>
+            </div>
+            <div class="social-price-range">
+              <div class="price-value">300 000 <span class="currency">F CFA / mois</span></div>
+              <span class="price-meta text-split-option">
+                Option flexible : Community Manager seul (150 000 F) ou Social Media Manager seul (150 000 F).
+              </span>
+            </div>
+            <button class="btn-select-plan add-to-calc-btn" data-category="Social Media" data-plan="CM + SMM Complet"
+              data-price="300000">
+              Sélectionner la formule +
+            </button>
+          </div>
+
+          <!-- Card 3: Traffic Manager -->
+          <div class="social-card glass-card">
+            <div class="social-card-badge">Acquisition</div>
+            <h3>Traffic Manager</h3>
+            <p class="social-card-desc">
+              Gestion experte de vos campagnes publicitaires payantes (Facebook Ads, Instagram Ads, TikTok Ads) pour
+              générer des leads qualifiés, des ventes et des conversions.
+            </p>
+            <div class="social-features-list">
+              <div class="s-feat">✓ Configuration du pixel et suivi des événements</div>
+              <div class="s-feat">✓ Création et A/B testing des campagnes</div>
+              <div class="s-feat">✓ Optimisation du coût par résultat (CPR)</div>
+              <div class="s-feat">✓ Rapport de rentabilité publicitaire</div>
+            </div>
+            <div class="social-price-range">
+              <div class="price-value">150 000 <span class="currency">F CFA / mois</span></div>
+              <span class="price-meta">Prestation mensuelle de gestion Ads</span>
+            </div>
+            <button class="btn-select-plan add-to-calc-btn" data-category="Social Media" data-plan="Traffic Manager"
+              data-price="150000">
+              Sélectionner Traffic Manager +
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: VOIX OFF & MARKETING DIGITAL -->
+    <section class="section-audio-marketing" id="voix-off">
+      <div class="container">
+        <div class="audio-marketing-grid">
+
+          <!-- Voix Off Column -->
+          <div class="audio-box glass-card">
+            <div class="badge-tag">
+              <span class="badge-square"></span>
+              <span>05 / UNE VOIX QUI PORTE</span>
+            </div>
+            <h2 class="section-heading-medium">Donnez du relief à vos mots.</h2>
+            <p class="audio-box-desc">
+              Une voix off professionnelle, chaleureuse et persuasive pour sublimer vos spots publicitaires, vidéos de
+              présentation et réels.
+            </p>
+
+            <!-- Soundwave Interactive Visualizer -->
+            <div class="soundwave-container" id="soundwave-wrap" title="Cliquez pour écouter un aperçu sonore">
+              <audio id="voice-demo-audio" preload="metadata">
+                <source src="assets/voix_off_demo.mp3" type="audio/mpeg">
+                <source src="assets/voix_off_demo.wav" type="audio/wav">
+                <source src="assets/voix_off_demo.m4a" type="audio/mp4">
+              </audio>
+              <button class="audio-play-toggle" id="audio-play-btn" aria-label="Écouter un extrait de voix">
+                <svg class="play-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="pause-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"
+                  style="display:none;">
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+              </button>
+              <div class="soundwave-bars" id="soundwave-bars">
+                <span class="bar" style="height: 40%"></span>
+                <span class="bar" style="height: 70%"></span>
+                <span class="bar" style="height: 90%"></span>
+                <span class="bar bar-pink" style="height: 100%"></span>
+                <span class="bar bar-pink" style="height: 85%"></span>
+                <span class="bar" style="height: 60%"></span>
+                <span class="bar" style="height: 40%"></span>
+                <span class="bar" style="height: 75%"></span>
+                <span class="bar bar-pink" style="height: 95%"></span>
+                <span class="bar" style="height: 50%"></span>
+                <span class="bar" style="height: 30%"></span>
+                <span class="bar" style="height: 65%"></span>
+                <span class="bar bar-pink" style="height: 80%"></span>
+                <span class="bar" style="height: 45%"></span>
+              </div>
+              <span class="audio-caption" id="audio-status-text">Écouter la démo vocale</span>
+            </div>
+
+            <!-- Pricing items for Voix Off -->
+            <div class="pricing-plans-list">
+              <div class="price-item">
+                <div class="price-item-info">
+                  <span class="item-name">Par pose</span>
+                  <span class="item-meta">Vidéo de 30 secondes au maximum</span>
+                </div>
+                <div class="price-value">10 000 <span class="currency">F CFA</span></div>
+              </div>
+
+              <div class="price-item featured-plan">
+                <div class="price-item-info">
+                  <span class="item-name">Pack Mensuel Illimité</span>
+                  <span class="item-meta">Poses illimitées (préavis 24h, ≤ 30s)</span>
+                </div>
+                <div class="price-value">200 000 <span class="currency">F CFA</span></div>
+              </div>
+            </div>
+
+            <p class="small-condition-text">
+              * Condition formule mensuelle : information 24h à l’avance, vidéos de 30s maximum. Pour les vidéos allant
+              jusqu'à 50s, tarif rediscuté.
+            </p>
+
+            <button class="btn-select-plan add-to-calc-btn" data-category="Voix Off" data-plan="Voix Off Illimitée"
+              data-price="200000">
+              Ajouter Voix Off +
+            </button>
+          </div>
+
+          <!-- Marketing Consultation Column -->
+          <div class="consulting-box glass-card">
+            <div class="badge-tag">
+              <span class="badge-square"></span>
+              <span>CONSEIL · MARKETING DIGITAL</span>
+            </div>
+            <h2 class="section-heading-medium">Le recul qui fait avancer.</h2>
+            <p class="consulting-desc">
+              Un regard stratégique extérieur et aiguisé pour clarifier vos enjeux commerciaux, questionner vos choix et
+              donner une direction claire et rentable à votre communication.
+            </p>
+
+            <div class="consulting-price-box">
+              <div class="price-range-label">TARIFICATION SUR MESURE</div>
+              <div class="price-value large">15 000 à 100 000 <span class="currency">F CFA</span></div>
+              <span class="price-meta">Au cas par cas, selon l'ampleur et les objectifs</span>
+            </div>
+
+            <div class="consulting-features">
+              <div class="c-feat">✦ Session d'échange approfondie en tête-à-tête</div>
+              <div class="c-feat">✦ Diagnostic des points bloquants & opportunités</div>
+              <div class="c-feat">✦ Recommandations tactiques immédiatement applicables</div>
+            </div>
+
+            <a href="https://wa.me/2290160817092?text=Bonjour%20Akasha%20Communication%2C%20je%20souhaite%20r%C3%A9server%20une%20session%20de%20consultation%20marketing."
+              target="_blank" rel="noopener" class="btn-consulting-action">
+              <span>Échangeons sur votre besoin</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 07: TRANSMETTRE ET FORMER (AVEC VRAIE PHOTO D'APPRENTISSAGE) -->
+    <section class="section-formations" id="formations">
+      <div class="container">
+        <div class="formations-grid">
+
+          <div class="formations-left">
+            <div class="badge-tag">
+              <span class="badge-square"></span>
+              <span>06 / TRANSMETTRE & FORMER</span>
+            </div>
+            <h2 class="section-heading-medium">
+              Passez de l'envie de faire au pouvoir de créer.
+            </h2>
+            <p class="formations-lead">
+              Des formations pratiques et orientées résultats pour prendre en main les outils de demain et décupler
+              votre impact sans dépendre de personne.
+            </p>
+            <!-- Formations Visual & Caption Badge (Badge positioned under the image) -->
+            <div class="formations-visual-container">
+              <div class="formations-workshop-frame">
+                <img src="assets/formations_capcut_meta_workspace.png"
+                  alt="Formation CapCut Montage Vidéo, IA et Meta Ads - Akasha Communication" class="workshop-img"
+                  loading="lazy"
+                  decoding="async">
+              </div>
+              <div class="workshop-badge glass-panel">
+                <div class="wb-header-row">
+                  <span class="badge-square"></span>
+                  <span class="wb-title">Ateliers Pratiques & Mentorat</span>
+                </div>
+                <span class="wb-sub">CapCut Vidéo, Outils IA & Stratégie Meta Ads (ROAS / CPA) · Autonomie créative
+                  garantie</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="formations-right">
+
+            <!-- Formation 1: IA & CapCut -->
+            <div class="formation-card glass-card">
+              <div class="formation-header">
+                <span class="formation-tag">INTELLIGENCE ARTIFICIELLE & CRÉATIVITÉ</span>
+                <span class="formation-price">50 000 <small>F CFA</small></span>
+              </div>
+              <h3 class="formation-title">Création de contenus assistée par IA</h3>
+              <p class="formation-desc">
+                Apprenez à générer des visuels percutants, des vidéos engageantes et maîtrisez le montage vidéo
+                professionnel avec les outils d'IA les plus avancés.
+              </p>
+              <div class="formation-bullets">
+                <div class="f-bullet">✓ Maîtrise totale de CapCut (Mobile & Desktop)</div>
+                <div class="f-bullet">✓ Pack complet de prompts exclusifs (Génération images & vidéos IA)</div>
+                <div class="f-bullet">✓ Techniques de storytelling et scripts viraux</div>
+              </div>
+              <div class="formation-footer">
+                <div class="formation-schedule">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>1 Mois · 3 séances par semaine · En ligne</span>
+                </div>
+                <button class="btn-select-plan add-to-calc-btn" data-category="Formation"
+                  data-plan="Formation IA & CapCut" data-price="50000">
+                  S'inscrire à cette formation +
+                </button>
+              </div>
+            </div>
+
+            <!-- Formation 2: Meta Buying -->
+            <div class="formation-card glass-card card-blue-accent">
+              <div class="formation-header">
+                <span class="formation-tag text-white">PUBLICITÉ DIGITALE & ACQUISITION</span>
+                <span class="formation-price text-white">35 000 <small>F CFA</small></span>
+              </div>
+              <h3 class="formation-title text-white">Meta Buying (Facebook & Instagram Ads)</h3>
+              <p class="formation-desc text-light">
+                Le guide pas-à-pas pour lancer des publicités rentables sur Meta, cibler la bonne audience et générer un
+                flux constant de clients pour votre activité.
+              </p>
+              <div class="formation-bullets text-light">
+                <div class="f-bullet">✓ Prise en main complète du Meta Ads Manager</div>
+                <div class="f-bullet">✓ Stratégies d'enchères, reciblage et audiences personnalisées</div>
+                <div class="f-bullet">✓ Analyse des indicateurs clés (ROAS, CPA, CTR)</div>
+              </div>
+              <div class="formation-footer">
+                <div class="formation-schedule text-white">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>2 semaines · En ligne avec cas pratiques</span>
+                </div>
+                <button class="btn-select-plan add-to-calc-btn btn-white-action" data-category="Formation"
+                  data-plan="Formation Meta Buying" data-price="35000">
+                  S'inscrire à Meta Buying +
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 08: SIMULATEUR DE DEVIS & CALCULATEUR EN TEMPS RÉEL -->
+    <section class="section-simulator" id="simulateur">
+      <div class="container">
+        <div class="simulator-wrapper glass-panel">
+          <div class="simulator-header">
+            <div class="badge-tag">
+              <span class="badge-square"></span>
+              <span>SIMULATEUR DE DEVIS PERSONNALISÉ</span>
+            </div>
+            <h2 class="simulator-title">Composez votre pack sur mesure en direct</h2>
+            <p class="simulator-desc">
+              Sélectionnez vos besoins mensuels ou ponctuels. Notre calculateur estime immédiatement votre budget et
+              prépare un bon de commande WhatsApp direct.
+            </p>
+          </div>
+
+          <div class="simulator-body-grid">
+            <!-- Left: Options Selection -->
+            <div class="simulator-options">
+
+              <!-- Category 1: Affiches -->
+              <div class="sim-group">
+                <label class="sim-label">1. Conception d'affiches :</label>
+                <div class="sim-pill-selector" data-group="affiches">
+                  <button class="sim-btn active" data-val="none" data-cost="0">Aucun</button>
+                  <button class="sim-btn" data-val="1 Affiche (7 000 F)" data-cost="7000">1 Unitaire (7k)</button>
+                  <button class="sim-btn" data-val="Pack 10 Affiches (60 000 F)" data-cost="60000">Pack 10
+                    (60k)</button>
+                  <button class="sim-btn" data-val="Pack 15 Affiches (80 000 F)" data-cost="80000">Pack 15
+                    (80k)</button>
+                  <button class="sim-btn" data-val="Pack 30 Affiches (150 000 F)" data-cost="150000">Pack 30
+                    (150k)</button>
+                </div>
+              </div>
+
+              <!-- Category 2: Réels -->
+              <div class="sim-group">
+                <label class="sim-label">2. Tournage & Montage de Réels :</label>
+                <div class="sim-pill-selector" data-group="reels">
+                  <button class="sim-btn active" data-val="none" data-cost="0">Aucun</button>
+                  <button class="sim-btn" data-val="1 Réel (15 000 F)" data-cost="15000">1 Unitaire (15k)</button>
+                  <button class="sim-btn" data-val="Pack 10 Réels (135 000 F)" data-cost="135000">Pack 10
+                    (135k)</button>
+                  <button class="sim-btn" data-val="Pack 15 Réels (175 000 F)" data-cost="175000">Pack 15
+                    (175k)</button>
+                </div>
+                <!-- Option Scripts checkbox -->
+                <label class="sim-checkbox-label">
+                  <input type="checkbox" id="check-scripts" data-cost="25000">
+                  <span class="custom-check"></span>
+                  <span>Ajouter la rédaction des scripts par Akasha (+25 000 F CFA)</span>
+                </label>
+              </div>
+
+              <!-- Category 3: Montage Vidéos -->
+              <div class="sim-group">
+                <label class="sim-label">3. Montage de vidéos (≤ 50 sec) :</label>
+                <div class="sim-pill-selector" data-group="montage">
+                  <button class="sim-btn active" data-val="none" data-cost="0">Aucun</button>
+                  <button class="sim-btn" data-val="1 Montage (10 000 F)" data-cost="10000">1 Vidéo (10k)</button>
+                  <button class="sim-btn" data-val="Pack 10 Montages (90 000 F)" data-cost="90000">Pack 10
+                    (90k)</button>
+                  <button class="sim-btn" data-val="Pack 15 Montages (150 000 F)" data-cost="150000">Pack 15
+                    (150k)</button>
+                </div>
+              </div>
+
+              <!-- Category 4: Social Media Management -->
+              <div class="sim-group">
+                <label class="sim-label">4. Gestion des Médias Sociaux :</label>
+                <div class="sim-pill-selector" data-group="smm">
+                  <button class="sim-btn active" data-val="none" data-cost="0">Aucun</button>
+                  <button class="sim-btn" data-val="Audit Digital (75 000 F)" data-cost="75000">Audit (75k)</button>
+                  <button class="sim-btn" data-val="Community Manager Seul (150 000 F)" data-cost="150000">CM seul
+                    (150k)</button>
+                  <button class="sim-btn" data-val="Social Media Manager Seul (150 000 F)" data-cost="150000">SMM seul
+                    (150k)</button>
+                  <button class="sim-btn" data-val="Formule Complète CM + SMM (300 000 F)" data-cost="300000">CM + SMM
+                    (300k)</button>
+                  <button class="sim-btn" data-val="Traffic Manager (150 000 F)" data-cost="150000">Traffic
+                    (150k)</button>
+                </div>
+              </div>
+
+              <!-- Category 5: Voix Off & Formations -->
+              <div class="sim-group">
+                <label class="sim-label">5. Voix Off & Formations en ligne :</label>
+                <div class="sim-checkboxes-grid">
+                  <label class="sim-checkbox-label">
+                    <input type="checkbox" class="addon-check" data-name="Voix off 1 pose" data-cost="10000">
+                    <span class="custom-check"></span>
+                    <span>Voix off unitaire (10 000 F)</span>
+                  </label>
+                  <label class="sim-checkbox-label">
+                    <input type="checkbox" class="addon-check" data-name="Voix off mensuelle illimitée"
+                      data-cost="200000">
+                    <span class="custom-check"></span>
+                    <span>Voix off illimitée mensuelle (200 000 F)</span>
+                  </label>
+                  <label class="sim-checkbox-label">
+                    <input type="checkbox" class="addon-check" data-name="Formation Création IA & CapCut"
+                      data-cost="50000">
+                    <span class="custom-check"></span>
+                    <span>Formation Création IA & CapCut (50 000 F)</span>
+                  </label>
+                  <label class="sim-checkbox-label">
+                    <input type="checkbox" class="addon-check" data-name="Formation Meta Buying" data-cost="35000">
+                    <span class="custom-check"></span>
+                    <span>Formation Meta Buying (35 000 F)</span>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right: Real-time Summary Card -->
+            <div class="simulator-summary">
+              <div class="summary-card glass-card">
+                <h3 class="summary-card-title">Récapitulatif de votre sélection</h3>
+
+                <div class="summary-items-list" id="summary-items-list">
+                  <div class="empty-state-text">Sélectionnez des options à gauche pour calculer votre estimation en
+                    temps réel.</div>
+                </div>
+
+                <div class="summary-total-block">
+                  <span class="total-label">Total Estimé :</span>
+                  <div class="total-amount">
+                    <span id="calc-total-display">0</span>
+                    <span class="total-currency">F CFA</span>
+                  </div>
+                </div>
+
+                <div class="summary-actions">
+                  <button id="send-whatsapp-quote-btn" class="btn-whatsapp-quote">
+                    <!-- Real WhatsApp Icon -->
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                      <path
+                        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.89 12.04 8.01 12.2C8.13 12.36 9.71 14.81 12.16 15.86C14.2 16.73 14.62 16.56 15.07 16.52C15.52 16.48 16.52 15.93 16.73 15.34C16.94 14.75 16.94 14.25 16.88 14.15C16.82 14.05 16.66 13.99 16.42 13.87C16.18 13.75 14.99 13.16 14.77 13.08C14.55 13 14.39 12.96 14.23 13.2C14.07 13.44 13.61 13.99 13.47 14.15C13.33 14.31 13.19 14.33 12.95 14.21C12.71 14.09 11.94 13.84 11.02 13.02C10.3 12.38 9.82 11.59 9.68 11.35C9.54 11.11 9.67 10.98 9.79 10.86C9.9 10.75 10.03 10.57 10.15 10.43C10.27 10.29 10.31 10.19 10.39 10.03C10.47 9.87 10.43 9.73 10.37 9.61C10.31 9.49 9.85 8.35 9.65 7.88C9.46 7.42 9.26 7.48 9.11 7.47C8.97 7.46 8.81 7.33 8.53 7.33Z" />
+                    </svg>
+                    <span>Valider & Commander sur WhatsApp</span>
+                  </button>
+
+                  <a href="#contact" class="btn-email-quote">
+                    <span>Ou discuter avec un stratège par email</span>
+                  </a>
+                </div>
+
+                <div class="summary-guarantee">
+                  <span><!-- Réponse garantie sous 2h · Sans engagement--></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 09: NOTRE APPROCHE & CONTACT IMMERSIF -->
+    <section class="section-contact" id="contact">
+      <div class="container">
+        <div class="contact-card-main glass-panel">
+          <div class="contact-header-badge">
+            <span class="badge-square"></span>
+            <span>07 / NOTRE APPROCHE & CONTACT</span>
+          </div>
+
+          <h2 class="contact-headline">
+            Votre idée attend <br>
+            <span class="text-fuchsia">sa première étincelle.</span>
+          </h2>
+
+          <p class="contact-subheadline">
+            Un contenu à créer, une présence à développer, une compétence à acquérir ? Racontez-nous ce que vous avez en
+            tête.
+          </p>
+
+          <div class="contact-channels-grid">
+
+            <!-- Direct WhatsApp CTA Box -->
+            <div class="channel-card">
+              <span class="channel-label">ÉCRIVEZ-NOUS DIRECTEMENT</span>
+              <a href="https://wa.me/2290160817092?text=Bonjour%20Akasha%20Communication%2C%20je%20souhaite%20discuter%20d%27un%20projet."
+                target="_blank" rel="noopener" class="btn-primary-pill channel-btn">
+                <span>Écrivez à AKASHA</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Phone Direct -->
+            <div class="channel-card">
+              <span class="channel-label">APPELEZ-NOUS</span>
+              <a href="tel:+2290160817092" class="contact-link-large">
+                <span>0160817092</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Email Direct -->
+            <div class="channel-card">
+              <span class="channel-label">ÉCRIVEZ-NOUS PAR EMAIL</span>
+              <a href="mailto:akashacommunication@gmail.com" class="contact-link-email">
+                <span>akashacommunication@gmail.com</span>
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Quick Message Form for Immediate Dispatch -->
+          <div class="contact-form-wrapper">
+            <h3 class="form-title">Envoyez votre message en 30 secondes</h3>
+            <form id="quick-contact-form" class="quick-form">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="contact-name">Votre nom ou marque</label>
+                  <input type="text" id="contact-name" name="name" placeholder="Ex: Jean D. / Ma Marque" required>
+                </div>
+                <div class="form-field">
+                  <label for="contact-tel">Numéro WhatsApp / Téléphone</label>
+                  <input type="tel" id="contact-tel" name="phone" placeholder="Ex: 01 60 81 70 92" required>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-service">Service d'intérêt</label>
+                <select id="contact-service" name="service">
+                  <option value="Création de contenus (Affiches, Vidéos, Réels)">Création de contenus (Affiches, Vidéos,
+                    Réels)</option>
+                  <option value="Gestion des médias sociaux & Traffic Management">Gestion des médias sociaux & Traffic
+                    Management</option>
+                  <option value="Création de logo & Identité Visuelle">Création de logo & Identité Visuelle</option>
+                  <option value="Voix off professionnelle">Voix off professionnelle</option>
+                  <option value="Formation en ligne (IA & CapCut / Meta Buying)">Formation en ligne (IA & CapCut / Meta
+                    Buying)</option>
+                  <option value="Consultation stratégique en marketing digital">Consultation stratégique en marketing
+                    digital</option>
+                  <option value="Autre demande sur mesure">Autre demande sur mesure</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-message">Parlez-nous brièvement de votre vision</label>
+                <textarea id="contact-message" name="message" rows="4"
+                  placeholder="Quels sont vos objectifs, vos délais et vos besoins spécifiques ?" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary-pill btn-submit-form">
+                  <span>Envoyer ma demande</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+                <span id="form-feedback" class="form-feedback"></span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo_white_transparent.png" alt="Akasha Communication" class="footer-logo logo-dark-mode">
+          <img src="assets/akasha_logo_light_theme.png?v=2" alt="Akasha Communication"
+            class="footer-logo logo-light-mode">
+          <p class="footer-slogan">
+            Le cinquième élément. L'éther par lequel votre communication circule et résonne.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#agence">L'agence</a></li>
+            <li><a href="#expertises">Nos expertises</a></li>
+            <li><a href="#tarifs">Offres & tarifs</a></li>
+            <li><a href="#formations">Formations en ligne</a></li>
+            <li><a href="#simulateur">Simulateur de budget</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Prestations</h4>
+          <ul>
+            <li><a href="#tarifs">Conception d'affiches</a></li>
+            <li><a href="#tarifs">Tournage & Montage Réels</a></li>
+            <li><a href="#social-media">Community Management</a></li>
+            <li><a href="#social-media">Traffic Manager</a></li>
+            <li><a href="#voix-off">Voix Off</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Contact & Réseaux</h4>
+          <ul>
+            <li><a href="tel:+2290160817092">0160817092</a></li>
+            <li><a href="mailto:akashacommunication@gmail.com">akashacommunication@gmail.com</a></li>
+            <li class="footer-social-links">
+              <a href="#" aria-label="Facebook">FB</a>
+              <a href="#" aria-label="Instagram">IG</a>
+              <a href="#" aria-label="TikTok">TT</a>
+              <a href="#" aria-label="LinkedIn">IN</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> AKASHA COMMUNICATION. Tous droits réservés.</p>
+        <p class="footer-credits">Conçu avec précision & passion pour l'excellence créative.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING QUICK WHATSAPP BUTTON (AUTHENTIC WHATSAPP ICON) -->
+  <a href="https://wa.me/2290160817092?text=Bonjour%20Akasha%20Communication%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20vos%20services."
+    target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Contacter Akasha sur WhatsApp">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+      <path
+        d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7.02 8.48 7.02 9.68C7.02 10.88 7.89 12.04 8.01 12.2C8.13 12.36 9.71 14.81 12.16 15.86C14.2 16.73 14.62 16.56 15.07 16.52C15.52 16.48 16.52 15.93 16.73 15.34C16.94 14.75 16.94 14.25 16.88 14.15C16.82 14.05 16.66 13.99 16.42 13.87C16.18 13.75 14.99 13.16 14.77 13.08C14.55 13 14.39 12.96 14.23 13.2C14.07 13.44 13.61 13.99 13.47 14.15C13.33 14.31 13.19 14.33 12.95 14.21C12.71 14.09 11.94 13.84 11.02 13.02C10.3 12.38 9.82 11.59 9.68 11.35C9.54 11.11 9.67 10.98 9.79 10.86C9.9 10.75 10.03 10.57 10.15 10.43C10.27 10.29 10.31 10.19 10.39 10.03C10.47 9.87 10.43 9.73 10.37 9.61C10.31 9.49 9.85 8.35 9.65 7.88C9.46 7.42 9.26 7.48 9.11 7.47C8.97 7.46 8.81 7.33 8.53 7.33Z" />
+    </svg>
+    <span class="floating-tooltip">Discuter sur WhatsApp</span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="app.js"></script>
+</body>
+
+</html>
