@@ -1,12 +1,12 @@
 # robots.txt — Akasha Communication
-# https://akasha-pi.vercel.app
+# https://akasha-com.vercel.app
 
 # Autoriser tous les moteurs de recherche
 User-agent: *
 Allow: /
 
 # Indiquer le sitemap
-Sitemap: https://akasha-pi.vercel.app/sitemap.xml
+Sitemap: https://akasha-com.vercel.app/sitemap.xml
 
 # Bloquer les ressources inutiles pour les crawlers
 Disallow: /assets/favicon*
