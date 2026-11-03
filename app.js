@@ -37,29 +37,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     1. AMBIENT ETHER PARTICLE CANVAS (Performance & Mobile Optimized)
+     1. AMBIENT ETHER PARTICLE CANVAS (Non-blocking Deferred Init)
      ========================================================================== */
-  const canvas = document.getElementById('ether-canvas');
-  if (canvas) {
+  function initEtherCanvas() {
+    const canvas = document.getElementById('ether-canvas');
+    if (!canvas) return;
+
     const ctx = canvas.getContext('2d');
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
     let isTabVisible = !document.hidden;
 
     const isMobile = width <= 768;
-    const particleCount = isMobile ? 16 : 38;
-    const maxConnectionDist = isMobile ? 85 : 125;
+    const particleCount = isMobile ? 12 : 36;
+    const maxConnectionDist = isMobile ? 80 : 120;
 
     const particles = [];
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        radius: Math.random() * 1.8 + 0.8,
+        radius: Math.random() * 1.6 + 0.8,
         color: Math.random() > 0.5 ? 'rgba(252, 0, 213, ' : 'rgba(42, 10, 235, ',
-        alpha: Math.random() * 0.45 + 0.2,
-        speedX: (Math.random() - 0.5) * 0.35,
-        speedY: (Math.random() - 0.5) * 0.35
+        alpha: Math.random() * 0.4 + 0.2,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3
       });
     }
 
@@ -69,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       resizeTimer = setTimeout(() => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
-      }, 200);
+      }, 250);
     }, { passive: true });
 
     document.addEventListener('visibilitychange', () => {
@@ -84,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.clearRect(0, 0, width, height);
       const isLightMode = body.classList.contains('light-theme');
 
-      // Draw faint interconnecting ether lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -95,15 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            const lineAlpha = isLightMode ? 0.05 * (1 - dist / maxConnectionDist) : 0.10 * (1 - dist / maxConnectionDist);
+            const lineAlpha = isLightMode ? 0.04 * (1 - dist / maxConnectionDist) : 0.08 * (1 - dist / maxConnectionDist);
             ctx.strokeStyle = isLightMode ? `rgba(42, 10, 235, ${lineAlpha})` : `rgba(160, 140, 255, ${lineAlpha})`;
-            ctx.lineWidth = 0.6;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
       }
 
-      // Draw particles
       particles.forEach(p => {
         p.x += p.speedX;
         p.y += p.speedY;
@@ -122,11 +122,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       requestAnimationFrame(renderEther);
     }
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(() => renderEther());
-    } else {
-      setTimeout(renderEther, 400);
-    }
+
+    renderEther();
+  }
+
+  // Defer canvas until everything critical has painted
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initEtherCanvas, { timeout: 1500 });
+  } else {
+    window.addEventListener('load', () => setTimeout(initEtherCanvas, 300));
   }
 
   /* ==========================================================================
@@ -170,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Dynamic Scrollspy: automatically highlight nav link matching current section in view
+  // Dynamic Scrollspy: Cached offsets to eliminate forced layout reflow (layout thrashing)
   const sectionsToWatch = [
     document.getElementById('agence'),
     document.getElementById('expertises'),
@@ -179,16 +183,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('simulateur')
   ].filter(Boolean);
 
+  let cachedOffsets = [];
+  function updateSectionOffsets() {
+    cachedOffsets = sectionsToWatch.map(sec => ({ id: sec.id, top: sec.offsetTop }));
+  }
+  window.addEventListener('load', updateSectionOffsets, { passive: true });
+  window.addEventListener('resize', () => {
+    clearTimeout(updateSectionOffsets._timer);
+    updateSectionOffsets._timer = setTimeout(updateSectionOffsets, 200);
+  }, { passive: true });
+
   function updateActiveNavOnScroll() {
     if (isNavClickScrolling) return;
 
     const scrollY = window.scrollY + 140;
     let currentSectionId = '';
 
-    for (let i = sectionsToWatch.length - 1; i >= 0; i--) {
-      const sec = sectionsToWatch[i];
-      if (sec && sec.offsetTop <= scrollY) {
-        currentSectionId = sec.id;
+    for (let i = cachedOffsets.length - 1; i >= 0; i--) {
+      const item = cachedOffsets[i];
+      if (item && item.top <= scrollY) {
+        currentSectionId = item.id;
         break;
       }
     }
@@ -216,13 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           header.classList.remove('scrolled');
         }
+        if (cachedOffsets.length === 0) updateSectionOffsets();
         updateActiveNavOnScroll();
         scrollTicking = false;
       });
       scrollTicking = true;
     }
   }, { passive: true });
-  updateActiveNavOnScroll();
 
   /* ==========================================================================
      3. INTERACTIVE QUOTE & PACKAGE SIMULATOR
