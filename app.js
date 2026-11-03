@@ -122,7 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       requestAnimationFrame(renderEther);
     }
-    renderEther();
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => renderEther());
+    } else {
+      setTimeout(renderEther, 400);
+    }
   }
 
   /* ==========================================================================

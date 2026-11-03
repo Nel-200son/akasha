@@ -2870,6 +2870,18 @@ body.light-theme .custom-check {
     padding: 0 10px;
   }
 
+  /* Mobile CPU & Compositing optimization for high LCP score */
+  .hero-scene-integrated {
+    animation: none !important;
+  }
+  .hero-scene-backglow {
+    filter: blur(24px) !important;
+    opacity: 0.65;
+  }
+  .hero-scene-artwork {
+    filter: drop-shadow(0 10px 25px rgba(42, 10, 235, 0.25)) !important;
+  }
+
   .scene-badge-top {
     left: 4px;
     top: 4px;

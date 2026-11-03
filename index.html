@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- =====================================================================
+       CRITICAL PERFORMANCE HINTS (Fast Mobile FCP & LCP)
+       ===================================================================== -->
+  <link rel="preload" as="image" href="assets/hero_creative_workspace_mobile.webp" type="image/webp" media="(max-width: 640px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/hero_creative_workspace.webp" type="image/webp" media="(min-width: 641px)" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- =====================================================================
        SEO CORE
        ===================================================================== -->
   <title>Akasha | Agence Communication Digitale & Création Contenu — Cotonou, Bénin</title>
@@ -151,15 +159,12 @@
   <link rel="icon" type="image/png" sizes="16x16"   href="assets/favicon-16x16.png">
   <link rel="apple-touch-icon"      sizes="180x180" href="assets/apple-touch-icon.png">
 
-  <!-- Google Fonts: Space Grotesk, Syne & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- Preload LCP Hero Image for maximum mobile performance -->
-  <link rel="preload" as="image" href="assets/hero_creative_workspace.webp" type="image/webp" fetchpriority="high">
+  <!-- Google Fonts: Asynchronous & Pruned to essential weights (400, 600, 700, 800) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Syne:wght@700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Syne:wght@700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Syne:wght@700;800&display=swap">
+  </noscript>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -288,13 +293,16 @@
             <div class="hero-scene-backglow" aria-hidden="true"></div>
 
             <div class="hero-scene-artwork">
-              <img src="assets/hero_creative_workspace.webp"
-                alt="Studio créatif Akasha Communication — agence digitale Cotonou Bénin, création de contenus et réseaux sociaux"
-                class="agency-hero-photo scene-image"
-                width="500"
-                height="500"
-                fetchpriority="high"
-                decoding="async">
+              <picture>
+                <source media="(max-width: 640px)" srcset="assets/hero_creative_workspace_mobile.webp" type="image/webp">
+                <img src="assets/hero_creative_workspace.webp"
+                  alt="Studio créatif Akasha Communication — agence digitale Cotonou Bénin, création de contenus et réseaux sociaux"
+                  class="agency-hero-photo scene-image"
+                  width="500"
+                  height="500"
+                  fetchpriority="high"
+                  decoding="async">
+              </picture>
             </div>
 
             <!-- Floating micro-badge seamlessly integrated -->
@@ -1365,7 +1373,7 @@
   </a>
 
   <!-- SCRIPTS -->
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 
 </html>
